@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:magnify/screens/city_places.dart';
+import 'package:magnify/util/const.dart';
 
 class Explore extends StatelessWidget {
   @override
@@ -22,27 +23,24 @@ class Explore extends StatelessWidget {
                   SizedBox(
                     width: 10,
                   ),
-                  Text(
-                    "Magnify",
-                    style: GoogleFonts.signika(fontSize: 50,fontWeight: FontWeight.w600)
-                  ),
-                  
+                  Text("Magnify",
+                      style: GoogleFonts.signika(
+                          fontSize: 50, fontWeight: FontWeight.w600)),
                 ],
               ),
             ),
-             SizedBox(
+            SizedBox(
               height: 40,
             ),
-             Align(
-               alignment: Alignment.centerLeft,
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(horizontal:38.0,vertical: 0.0),
-                              child: Text(
-                      "choose a city explore",
-                      style: GoogleFonts.signika(fontSize: 20)
-                    ),
-                            ),
-             ),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 38.0, vertical: 0.0),
+                child: Text("choose a city explore",
+                    style: GoogleFonts.signika(fontSize: 20)),
+              ),
+            ),
             SizedBox(
               height: 15,
             ),
@@ -59,10 +57,9 @@ Widget buildGrid() {
   return Padding(
     padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
     child: Container(
-      color: Colors.white,
+      color: Constants.lightPrimary,
       child: Column(
         children: [
-          
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -118,7 +115,7 @@ class ImageCityIcon extends StatelessWidget {
         print("Clicked $imgName");
       },
       child: Container(
-        color: Colors.white,
+        color: Constants.lightPrimary,
         child: Padding(
           padding: const EdgeInsets.all(2.0),
           child: Column(children: [

@@ -4,9 +4,9 @@ import 'package:magnify/screens/details.dart';
 
 class VerticalPlaceItem extends StatelessWidget {
   final Map place;
-  final Color color;
+  final String citycode;
 
-  VerticalPlaceItem({this.place,this.color});
+  VerticalPlaceItem({this.place,this.citycode});
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +99,7 @@ class VerticalPlaceItem extends StatelessWidget {
             MaterialPageRoute(
               builder: (BuildContext context) {
                 return Details(
-                  place,color
+                  place,citycode
                 );
               },
             ),

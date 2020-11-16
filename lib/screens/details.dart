@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:magnify/util/cities.dart';
 import 'package:magnify/util/places.dart';
-import 'package:magnify/widgets/icon_badge.dart';
 
 class Details extends StatelessWidget {
   final Map place;
-  final Color color;
+  final String citycode;
 
-  Details(this.place, this.color);
+  Details(this.place, this.citycode);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: color,
+        backgroundColor: Color(cities['$citycode']['color']),
         
       ),
       body: ListView(
@@ -131,7 +131,7 @@ class Details extends StatelessWidget {
         primary: false,
         itemCount: places == null ? 0 : places.length,
         itemBuilder: (BuildContext context, int index) {
-          Map place = places[index];
+          Map place = places[citycode][index];
 
           return Padding(
             padding: EdgeInsets.only(right: 10.0),

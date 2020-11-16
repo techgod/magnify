@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:magnify/util/const.dart';
 
 class Review extends StatefulWidget {
   @override
@@ -22,7 +23,7 @@ class _ReviewState extends State<Review> {
       appBar: AppBar(
         brightness: Brightness.light,
         iconTheme: IconThemeData(color: Colors.black),
-        backgroundColor: Colors.white,
+        backgroundColor: Constants.lightPrimary,
         elevation: 2.0,
         centerTitle: true,
         title: Text(

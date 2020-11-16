@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:magnify/screens/review.dart';
-import 'package:magnify/util/cities.dart';
+import 'package:magnify/util/const.dart';
 import 'package:magnify/util/places.dart';
 import 'package:magnify/widgets/vertical_place_item.dart';
 
@@ -49,7 +49,7 @@ class Contribution extends StatelessWidget {
 
 buildVerticalList() {
   return Container(
-    color: Colors.white,
+    color: Constants.lightPrimary,
     child: Column(
       children: [
         SizedBox(
@@ -63,8 +63,8 @@ buildVerticalList() {
             shrinkWrap: true,
             itemCount: places == null ? 0 : 3,
             itemBuilder: (BuildContext context, int index) {
-              Map place = places[index];
-              return VerticalPlaceItem(place: place, color: Colors.brown);
+              Map place = places['bom'][index];
+              return VerticalPlaceItem(place: place, citycode: 'bom',);
             },
           ),
         ),
