@@ -2,24 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:magnify/util/cities.dart';
 import 'package:magnify/util/const.dart';
 import 'package:magnify/util/places.dart';
-import 'package:magnify/widgets/vertical_place_item.dart';
+import 'package:magnify/widgets/city_place_item.dart';
 
 class CityPlaces extends StatelessWidget {
-  final String city;
-  final String citycode;
+  final String cityName;
+  final String cityCode;
 
-  CityPlaces(this.city, this.citycode);
+  CityPlaces(this.cityName, this.cityCode);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(cities['$citycode']['color']),
+      backgroundColor: Color(cities['$cityCode']['color']),
       appBar: AppBar(
           elevation: 0,
-          backgroundColor: Color(cities['$citycode']['color']),
+          backgroundColor: Color(cities['$cityCode']['color']),
           toolbarHeight: 180,
           title: Column(children: [
-            Image.asset('assets/$citycode.png'),
-            Text(city),
+            Image.asset('assets/$cityCode.png'),
+            Text(cityName),
           ])),
       body: SingleChildScrollView(
         child: Column(
@@ -28,7 +28,7 @@ class CityPlaces extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  cities['$citycode']['details'],
+                  cities['$cityCode']['details'],
                   style: TextStyle(
                     fontSize: 13,
                     color: Colors.white70,
@@ -36,16 +36,16 @@ class CityPlaces extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-              color: Color(cities['$citycode']['color']),
+              color: Color(cities['$cityCode']['color']),
             ),
-            buildVerticalList(city, citycode)
+            buildCityList(cityName, cityCode)
           ],
         ),
       ),
     );
   }
 
-  buildVerticalList(String city, String citycode) {
+  Widget buildCityList(String city, String citycode) {
     print(citycode);
     if (!places.containsKey(citycode)) {
       //value doesn't exist
@@ -76,7 +76,7 @@ class CityPlaces extends StatelessWidget {
               itemBuilder: (BuildContext context, int index) {
                 print(places[citycode][index]);
                 Map place = places[citycode][index];
-                return VerticalPlaceItem(
+                return CityPlaceItem(
                   place: place,
                   citycode: citycode,
                 );

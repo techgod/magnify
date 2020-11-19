@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:magnify/screens/review.dart';
 import 'package:magnify/util/const.dart';
 import 'package:magnify/util/places.dart';
-import 'package:magnify/widgets/vertical_place_item.dart';
+import 'package:magnify/widgets/city_place_item.dart';
 
 class Contribution extends StatelessWidget {
   @override
@@ -24,7 +24,7 @@ class Contribution extends StatelessWidget {
                     style: GoogleFonts.signika(fontSize: 38)),
               ),
             ),
-            buildVerticalList()
+            buildExistingReviewsList()
           ],
         ),
       ),
@@ -47,7 +47,7 @@ class Contribution extends StatelessWidget {
   }
 }
 
-buildVerticalList() {
+buildExistingReviewsList() {
   return Container(
     color: Constants.lightPrimary,
     child: Column(
@@ -64,7 +64,7 @@ buildVerticalList() {
             itemCount: places == null ? 0 : 3,
             itemBuilder: (BuildContext context, int index) {
               Map place = places['bom'][index];
-              return VerticalPlaceItem(place: place, citycode: 'bom',);
+              return CityPlaceItem(place: place, citycode: 'bom',);
             },
           ),
         ),

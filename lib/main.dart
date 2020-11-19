@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:magnify/screens/contribute.dart';
 import 'package:magnify/screens/explore.dart';
+import 'package:magnify/screens/login.dart';
 import 'package:magnify/screens/profile.dart';
 
 void main() {
@@ -9,13 +10,11 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Magnify',
       debugShowCheckedModeBanner: false,
-      //theme: Constants.lightTheme,
       theme: ThemeData(
         primarySwatch: Colors.brown,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -59,7 +58,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: AnnotatedRegion(
         value: SystemUiOverlayStyle.dark,
-              child: PageView(
+        child: PageView(
             controller: pageController,
             onPageChanged: (index) {
               setState(() {

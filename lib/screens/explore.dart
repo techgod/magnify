@@ -23,7 +23,7 @@ class Explore extends StatelessWidget {
                   SizedBox(
                     width: 10,
                   ),
-                  Text("Magnify",
+                  Text("magnify",
                       style: GoogleFonts.signika(
                           fontSize: 50, fontWeight: FontWeight.w600)),
                 ],
@@ -63,9 +63,9 @@ Widget buildGrid() {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              ImageCityIcon('del', "New Delhi"),
-              ImageCityIcon('blr', "Bengaluru"),
-              ImageCityIcon('bom', "Mumbai"),
+              CityIcon('del', "New Delhi"),
+              CityIcon('blr', "Bengaluru"),
+              CityIcon('bom', "Mumbai"),
             ],
           ),
           SizedBox(
@@ -74,9 +74,9 @@ Widget buildGrid() {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              ImageCityIcon('lko', "Lucknow"),
-              ImageCityIcon('jai', "Jaipur"),
-              ImageCityIcon('ccu', "Kolkata"),
+              CityIcon('lko', "Lucknow"),
+              CityIcon('jai', "Jaipur"),
+              CityIcon('ccu', "Kolkata"),
             ],
           ),
           SizedBox(
@@ -85,9 +85,9 @@ Widget buildGrid() {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              ImageCityIcon('maa', "Chennai"),
-              ImageCityIcon('pnq', "Pune"),
-              ImageCityIcon('hyd', "Hyderabad"),
+              CityIcon('maa', "Chennai"),
+              CityIcon('pnq', "Pune"),
+              CityIcon('hyd', "Hyderabad"),
             ],
           ),
           SizedBox(
@@ -99,10 +99,10 @@ Widget buildGrid() {
   );
 }
 
-class ImageCityIcon extends StatelessWidget {
-  final String imgIcon;
-  final String imgName;
-  ImageCityIcon(this.imgIcon, this.imgName);
+class CityIcon extends StatelessWidget {
+  final String cityCode;
+  final String cityName;
+  CityIcon(this.cityCode, this.cityName);
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -110,9 +110,9 @@ class ImageCityIcon extends StatelessWidget {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => CityPlaces(imgName, imgIcon)));
+                builder: (context) => CityPlaces(cityName, cityCode)));
 
-        print("Clicked $imgName");
+        print("Clicked $cityName");
       },
       child: Container(
         color: Constants.lightPrimary,
@@ -120,12 +120,12 @@ class ImageCityIcon extends StatelessWidget {
           padding: const EdgeInsets.all(2.0),
           child: Column(children: [
             Image.asset(
-              'assets/$imgIcon.png',
+              'assets/$cityCode.png',
               width: 100,
               height: 100,
             ),
             Text(
-              imgName,
+              cityName,
               style: TextStyle(fontSize: 14),
             )
           ]),

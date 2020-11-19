@@ -122,23 +122,21 @@ class Details extends StatelessWidget {
     );
   }
 
-  buildSlider() {
+    buildSlider() {
     return Container(
       padding: EdgeInsets.only(left: 20),
       height: 250.0,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         primary: false,
-        itemCount: places == null ? 0 : places.length,
+        itemCount: place['img'] == null ? 0 : place['img'].length,
         itemBuilder: (BuildContext context, int index) {
-          Map place = places[citycode][index];
-
           return Padding(
             padding: EdgeInsets.only(right: 10.0),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10.0),
               child: Image.asset(
-                "${place["img"]}",
+                "${place["img"][index]}",
                 height: 250.0,
                 width: MediaQuery.of(context).size.width - 40.0,
                 fit: BoxFit.cover,
@@ -149,4 +147,32 @@ class Details extends StatelessWidget {
       ),
     );
   }
+
+  // buildSlider() {
+  //   return Container(
+  //     padding: EdgeInsets.only(left: 20),
+  //     height: 250.0,
+  //     child: ListView.builder(
+  //       scrollDirection: Axis.horizontal,
+  //       primary: false,
+  //       itemCount: places == null ? 0 : places.length,
+  //       itemBuilder: (BuildContext context, int index) {
+  //         Map place = places[citycode][index];
+
+  //         return Padding(
+  //           padding: EdgeInsets.only(right: 10.0),
+  //           child: ClipRRect(
+  //             borderRadius: BorderRadius.circular(10.0),
+  //             child: Image.asset(
+  //               "${place["img"][0]}",
+  //               height: 250.0,
+  //               width: MediaQuery.of(context).size.width - 40.0,
+  //               fit: BoxFit.cover,
+  //             ),
+  //           ),
+  //         );
+  //       },
+  //     ),
+  //   );
+  // }
 }
