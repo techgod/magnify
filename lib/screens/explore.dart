@@ -120,7 +120,7 @@ class CityIcon extends StatelessWidget {
           padding: const EdgeInsets.all(2.0),
           child: Column(children: [
             Image.asset(
-              'assets/$cityCode.png',
+              'assets/cities/$cityCode.png',
               width: 100,
               height: 100,
             ),

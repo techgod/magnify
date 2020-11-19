@@ -1,3 +1,3 @@
 # magnify
-
-A flutter prototype.
+!["Demo"](sample.gif)
+A flutter travel app prototype.

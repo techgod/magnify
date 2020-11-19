@@ -18,7 +18,7 @@ class CityPlaces extends StatelessWidget {
           backgroundColor: Color(cities['$cityCode']['color']),
           toolbarHeight: 180,
           title: Column(children: [
-            Image.asset('assets/$cityCode.png'),
+            Image.asset('assets/cities/$cityCode.png'),
             Text(cityName),
           ])),
       body: SingleChildScrollView(
