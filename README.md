@@ -1,3 +1,5 @@
+<img src="assets/magnify_logo.png" height="100" width="100"/>
+
 ## magnify
 #### Find lesser known places while travelling to new cities
 A travel app prototype created using Flutter
